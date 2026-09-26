@@ -153,7 +153,7 @@ const Skills = () => {
                             <motion.span
                                 key={i}
                                 className="px-4 py-2 rounded-full border border-primary/25 bg-primary/8 text-primary text-xs font-semibold"
-                                whileHover={{ scale: 1.08, borderColor: 'rgba(255,26,26,0.6)' }}
+                                whileHover={{ scale: 1.08, borderColor: 'rgba(165,42,54,0.45)' }}
                             >
                                 {s}
                             </motion.span>

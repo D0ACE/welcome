@@ -28,11 +28,11 @@
   }
 
   .neon-text {
-    text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #ff1a1a, 0 0 80px #ff1a1a;
+    text-shadow: none;
   }
 
   .neon-text-soft {
-    text-shadow: 0 0 8px #ff1a1a, 0 0 16px #ff1a1a, 0 0 24px #ff1a1a;
+    text-shadow: none;
   }
 
   .gradient-text {
@@ -63,7 +63,6 @@
   }
 
   .btn-primary:hover {
-    box-shadow: 0 0 25px rgba(255, 26, 26, 0.6), 0 0 50px rgba(255, 26, 26, 0.3);
     @apply bg-primary/90;
   }
 
@@ -72,7 +71,7 @@
   }
 
   .btn-outline:hover {
-    box-shadow: 0 0 25px rgba(255, 26, 26, 0.6), 0 0 50px rgba(255, 26, 26, 0.3);
+    box-shadow: none;
   }
 
   .section-padding {
@@ -93,7 +92,7 @@
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 2px solid rgba(255, 26, 26, 0.8);
+  border: 2px solid rgba(165, 42, 54, 0.65);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
@@ -107,21 +106,21 @@
   position: fixed;
   width: 6px;
   height: 6px;
-  background: #ff1a1a;
+  background: #a52a36;
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
   top: 0;
   left: 0;
   will-change: transform;
-  box-shadow: 0 0 8px #ff1a1a, 0 0 16px #ff1a1a;
+  box-shadow: none;
 }
 
 .custom-cursor.hovering {
   width: 60px;
   height: 60px;
-  background: rgba(255, 26, 26, 0.1);
-  border-color: #ff1a1a;
+  background: rgba(165, 42, 54, 0.08);
+  border-color: #a52a36;
 }
 
 /* hide default cursor on all interactive elements */
@@ -139,25 +138,25 @@ a, button, input, textarea, [role="button"] {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff1a1a, #cc0000);
+  background: linear-gradient(to bottom, #8f2633, #641722);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff4444;
+  background: #b84a55;
 }
 
 /* ─── Selection ──────────────────────────────────────── */
 ::selection {
-  background: rgba(255, 26, 26, 0.4);
+  background: rgba(165, 42, 54, 0.35);
   color: white;
 }
 
 /* ─── Grid Background ────────────────────────────────── */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 26, 26, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 26, 26, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(165, 42, 54, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(165, 42, 54, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -172,7 +171,7 @@ a, button, input, textarea, [role="button"] {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 26, 26, 0.6), transparent 40%, rgba(255, 26, 26, 0.4));
+  background: linear-gradient(135deg, rgba(165, 42, 54, 0.45), transparent 40%, rgba(165, 42, 54, 0.28));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -181,7 +180,7 @@ a, button, input, textarea, [role="button"] {
 
 /* ─── Shimmer text effect ────────────────────────────── */
 .shimmer-text {
-  background: linear-gradient(90deg, #fff 0%, #ff1a1a 25%, #fff 50%, #ff1a1a 75%, #fff 100%);
+  background: linear-gradient(90deg, #fff 0%, #a52a36 25%, #fff 50%, #a52a36 75%, #fff 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -191,8 +190,8 @@ a, button, input, textarea, [role="button"] {
 
 /* ─── Keyframe Animations ────────────────────────────── */
 @keyframes glow {
-  from { box-shadow: 0 0 5px rgba(255,26,26,0.3), 0 0 10px rgba(255,26,26,0.2); }
-  to   { box-shadow: 0 0 20px rgba(255,26,26,0.7), 0 0 40px rgba(255,26,26,0.4), 0 0 80px rgba(255,26,26,0.2); }
+  from { box-shadow: 0 0 2px rgba(165,42,54,0.15); }
+  to   { box-shadow: 0 0 5px rgba(165,42,54,0.25); }
 }
 
 @keyframes float {
@@ -263,7 +262,7 @@ a, button, input, textarea, [role="button"] {
 /* ─── Typing Cursor ──────────────────────────────────── */
 .typing-cursor::after {
   content: '|';
-  color: #ff1a1a;
+  color: #a52a36;
   animation: blink-caret 0.8s ease-in-out infinite;
   margin-left: 2px;
 }
@@ -295,7 +294,7 @@ a, button, input, textarea, [role="button"] {
 
 /* ─── Skill bar glow ─────────────────────────────────── */
 .skill-bar-fill {
-  background: linear-gradient(90deg, #ff1a1a, #ff6b6b);
-  box-shadow: 0 0 8px rgba(255, 26, 26, 0.6);
+  background: linear-gradient(90deg, #7d1d2a, #b84a55);
+  box-shadow: none;
   border-radius: 9999px;
 }
