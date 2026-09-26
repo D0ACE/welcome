@@ -46,7 +46,7 @@ const skillCategories = [
     },
 ];
 
-const extraSkills = ['Excel', 'Tableau', 'R', 'TensorFlow', 'Deep Learning', 'Matplotlib', 'Seaborn'];
+const extraSkills = ['Data Analytics', 'Data Science', 'ML', 'EDA', 'DL', 'LLM', 'NLP'];
 
 const Skills = () => {
     const sectionRef = useRef(null);
