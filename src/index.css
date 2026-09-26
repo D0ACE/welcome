@@ -92,7 +92,7 @@
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 2px solid rgba(165, 42, 54, 0.65);
+  border: 2px solid rgba(139, 0, 0, 0.65);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
@@ -106,7 +106,7 @@
   position: fixed;
   width: 6px;
   height: 6px;
-  background: #a52a36;
+  background: #8B0000;
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
@@ -119,8 +119,8 @@
 .custom-cursor.hovering {
   width: 60px;
   height: 60px;
-  background: rgba(165, 42, 54, 0.08);
-  border-color: #a52a36;
+  background: rgba(139, 0, 0, 0.08);
+  border-color: #8B0000;
 }
 
 /* hide default cursor on all interactive elements */
@@ -138,25 +138,25 @@ a, button, input, textarea, [role="button"] {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8f2633, #641722);
+  background: #8B0000;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b84a55;
+  background: #8B0000;
 }
 
 /* ─── Selection ──────────────────────────────────────── */
 ::selection {
-  background: rgba(165, 42, 54, 0.35);
+  background: rgba(139, 0, 0, 0.35);
   color: white;
 }
 
 /* ─── Grid Background ────────────────────────────────── */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(165, 42, 54, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(165, 42, 54, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(139, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -171,7 +171,7 @@ a, button, input, textarea, [role="button"] {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(165, 42, 54, 0.45), transparent 40%, rgba(165, 42, 54, 0.28));
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.45), transparent 40%, rgba(139, 0, 0, 0.28));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -180,7 +180,7 @@ a, button, input, textarea, [role="button"] {
 
 /* ─── Shimmer text effect ────────────────────────────── */
 .shimmer-text {
-  background: linear-gradient(90deg, #fff 0%, #a52a36 25%, #fff 50%, #a52a36 75%, #fff 100%);
+  background: linear-gradient(90deg, #fff 0%, #8B0000 25%, #fff 50%, #8B0000 75%, #fff 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -190,8 +190,8 @@ a, button, input, textarea, [role="button"] {
 
 /* ─── Keyframe Animations ────────────────────────────── */
 @keyframes glow {
-  from { box-shadow: 0 0 2px rgba(165,42,54,0.15); }
-  to   { box-shadow: 0 0 5px rgba(165,42,54,0.25); }
+  from { box-shadow: 0 0 2px rgba(139,0,0,0.15); }
+  to   { box-shadow: 0 0 5px rgba(139,0,0,0.25); }
 }
 
 @keyframes float {
@@ -262,7 +262,7 @@ a, button, input, textarea, [role="button"] {
 /* ─── Typing Cursor ──────────────────────────────────── */
 .typing-cursor::after {
   content: '|';
-  color: #a52a36;
+  color: #8B0000;
   animation: blink-caret 0.8s ease-in-out infinite;
   margin-left: 2px;
 }
@@ -294,7 +294,7 @@ a, button, input, textarea, [role="button"] {
 
 /* ─── Skill bar glow ─────────────────────────────────── */
 .skill-bar-fill {
-  background: linear-gradient(90deg, #7d1d2a, #b84a55);
+  background: #8B0000;
   box-shadow: none;
   border-radius: 9999px;
 }

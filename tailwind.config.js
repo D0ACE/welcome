@@ -7,7 +7,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#a52a36',
+                primary: '#8B0000',
                 dark: '#000000',
             },
             fontFamily: {
@@ -20,8 +20,8 @@ export default {
             },
             keyframes: {
                 glow: {
-                    '0%': { boxShadow: '0 0 2px rgba(165, 42, 54, 0.2)' },
-                    '100%': { boxShadow: '0 0 5px rgba(165, 42, 54, 0.3)' },
+                    '0%': { boxShadow: '0 0 2px rgba(139, 0, 0, 0.2)' },
+                    '100%': { boxShadow: '0 0 5px rgba(139, 0, 0, 0.3)' },
                 },
                 float: {
                     '0%, 100%': { transform: 'translateY(0px)' },

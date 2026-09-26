@@ -32,7 +32,7 @@ function ParticleSphere() {
         <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
             <PointMaterial
                 transparent
-                color="#8f2633"
+                color="#8B0000"
                 size={0.022}
                 sizeAttenuation
                 depthWrite={false}
@@ -73,7 +73,7 @@ function WireIco() {
     return (
         <mesh ref={ref}>
             <icosahedronGeometry args={[1.4, 1]} />
-            <meshBasicMaterial color="#8f2633" wireframe transparent opacity={0.18} />
+            <meshBasicMaterial color="#8B0000" wireframe transparent opacity={0.18} />
         </mesh>
     );
 }
@@ -122,9 +122,9 @@ export default function Scene3D() {
             <DataCloud />
             <ParticleSphere />
             <WireIco />
-            <Ring radius={3.2}  tube={0.018} color="#8f2633" opacity={0.25} speedX={0.25} speedZ={0.18} initialRot={{ x: 0, z: 0 }} />
-            <Ring radius={5.0}  tube={0.012} color="#8f2633" opacity={0.14}  speedX={0.12} speedZ={0.28} initialRot={{ x: 1, z: 0.5 }} />
-            <Ring radius={6.5}  tube={0.008} color="#b84a55" opacity={0.1} speedX={0.08} speedZ={0.15} initialRot={{ x: 0.5, z: 1 }} />
+            <Ring radius={3.2}  tube={0.018} color="#8B0000" opacity={0.25} speedX={0.25} speedZ={0.18} initialRot={{ x: 0, z: 0 }} />
+            <Ring radius={5.0}  tube={0.012} color="#8B0000" opacity={0.14}  speedX={0.12} speedZ={0.28} initialRot={{ x: 1, z: 0.5 }} />
+            <Ring radius={6.5}  tube={0.008} color="#8B0000" opacity={0.1} speedX={0.08} speedZ={0.15} initialRot={{ x: 0.5, z: 1 }} />
         </Canvas>
     );
 }
