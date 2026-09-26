@@ -111,6 +111,16 @@ const Hero = () => {
             <div className="hero-blob-1 absolute top-16 left-12 w-[420px] h-[420px] bg-primary/15 rounded-full blur-[120px] pointer-events-none z-1" />
             <div className="hero-blob-2 absolute bottom-16 right-12 w-[380px] h-[380px] bg-primary/10 rounded-full blur-[100px] pointer-events-none z-1" />
 
+            {/* ── Futuristic HUD layer ──────────────────── */}
+            <div className="hero-orbit hero-orbit-one" />
+            <div className="hero-orbit hero-orbit-two" />
+            <div className="hero-crosshair hero-crosshair-left" />
+            <div className="hero-crosshair hero-crosshair-right" />
+            <div className="hero-status absolute top-28 right-6 md:right-12 lg:right-24 z-10">
+                <span className="hero-status-dot" />
+                SYSTEM ONLINE
+            </div>
+
             {/* ── Content ───────────────────────────────── */}
             <div className="relative z-10 container-custom section-padding text-center w-full">
 

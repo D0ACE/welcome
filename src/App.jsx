@@ -168,6 +168,7 @@ function App() {
         <div className="relative">
             {/* noise film grain */}
             <div className="noise-overlay" />
+            <div className="scanline-overlay" />
 
             <CustomCursor />
             <Navbar />

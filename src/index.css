@@ -158,6 +158,82 @@ a, button, input, textarea, [role="button"] {
     linear-gradient(rgba(139, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(139, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
+  animation: grid-drift 18s linear infinite;
+}
+
+/* ─── Futuristic interface details ──────────────────── */
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99997;
+  pointer-events: none;
+  opacity: 0.08;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(139, 0, 0, 0.12) 4px,
+    transparent 5px
+  );
+  animation: scanline-drift 10s linear infinite;
+}
+
+.hero-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(139, 0, 0, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-orbit-one {
+  width: min(72vw, 760px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) rotate(22deg) scaleY(0.34);
+  animation: orbit-spin 22s linear infinite;
+}
+
+.hero-orbit-two {
+  width: min(58vw, 620px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) rotate(-28deg) scaleY(0.28);
+  border-color: rgba(139, 0, 0, 0.12);
+  animation: orbit-spin-reverse 17s linear infinite;
+}
+
+.hero-crosshair {
+  position: absolute;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  border-top: 1px solid rgba(139, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(139, 0, 0, 0.18);
+  pointer-events: none;
+  z-index: 2;
+  animation: crosshair-pulse 3s ease-in-out infinite;
+}
+
+.hero-crosshair-left { left: 4%; }
+.hero-crosshair-right { right: 4%; transform: rotate(180deg); animation-delay: 1.5s; }
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  animation: status-flicker 4s ease-in-out infinite;
+}
+
+.hero-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8B0000;
+  animation: status-pulse 1.8s ease-in-out infinite;
 }
 
 /* ─── Gradient border card ───────────────────────────── */
@@ -222,6 +298,42 @@ a, button, input, textarea, [role="button"] {
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
+}
+
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+@keyframes scanline-drift {
+  from { transform: translateY(-12px); }
+  to { transform: translateY(12px); }
+}
+
+@keyframes orbit-spin {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@keyframes orbit-spin-reverse {
+  from { rotate: 360deg; }
+  to { rotate: 0deg; }
+}
+
+@keyframes crosshair-pulse {
+  0%, 100% { opacity: 0.35; transform: translateX(0) scaleX(1); }
+  50% { opacity: 0.8; transform: translateX(8px) scaleX(1.15); }
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes status-flicker {
+  0%, 90%, 100% { opacity: 1; }
+  92% { opacity: 0.45; }
+  94% { opacity: 0.9; }
 }
 
 @keyframes gradient-shift {
@@ -297,4 +409,12 @@ a, button, input, textarea, [role="button"] {
   background: #8B0000;
   box-shadow: none;
   border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
