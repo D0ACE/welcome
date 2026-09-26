@@ -117,8 +117,8 @@ function Navbar() {
                         </a>
                     ))}
                     <a
-                        href={`${import.meta.env.BASE_URL}Abhishek_Ramamurthy_Rattihalli_1.0.pdf`}
-                        download="Abhishek_Ramamurthy_Rattihalli_1.0.pdf"
+                        href={`${import.meta.env.BASE_URL}Abhishek_Resume_Updated-7.pdf`}
+                        download="Abhishek_Resume_Updated-7.pdf"
                         className="px-4 py-2 border border-primary/60 text-primary text-sm font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300"
                     >
                         Resume

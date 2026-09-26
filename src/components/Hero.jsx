@@ -178,8 +178,8 @@ const Hero = () => {
                     </motion.a>
 
                     <motion.a
-                        href={`${import.meta.env.BASE_URL}Abhishek_Ramamurthy_Rattihalli_1.0.pdf`}
-                        download="Abhishek_Ramamurthy_Rattihalli_1.0.pdf"
+                        href={`${import.meta.env.BASE_URL}Abhishek_Resume_Updated-7.pdf`}
+                        download="Abhishek_Resume_Updated-7.pdf"
                         className="btn-outline flex items-center gap-2 text-sm md:text-base"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}

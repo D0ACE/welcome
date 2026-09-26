@@ -93,8 +93,8 @@ const Footer = () => {
                     </p>
 
                     <motion.a
-                        href={`${import.meta.env.BASE_URL}Abhishek_Ramamurthy_Rattihalli_1.0.pdf`}
-                        download="Abhishek_Ramamurthy_Rattihalli_1.0.pdf"
+                        href={`${import.meta.env.BASE_URL}Abhishek_Resume_Updated-7.pdf`}
+                        download="Abhishek_Resume_Updated-7.pdf"
                         className="text-primary/80 hover:text-primary text-xs font-semibold transition-colors flex items-center gap-1"
                         whileHover={{ scale: 1.05 }}
                     >
