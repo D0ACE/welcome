@@ -82,7 +82,43 @@ const Hero = () => {
         gsap.to('.hero-blob-1', { y: -30, duration: 4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
         gsap.to('.hero-blob-2', { y: 25, duration: 5.5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1 });
 
-        return () => tl.kill();
+        /* pointer-driven 3D depth */
+        const sceneLayer = heroRef.current.querySelector('.hero-scene-layer');
+        const contentLayer = heroRef.current.querySelector('.hero-content-layer');
+        const hudLayer = heroRef.current.querySelector('.hero-hud-layer');
+        const moveScene = gsap.quickTo(sceneLayer, 'rotateY', { duration: 1.2, ease: 'power3.out' });
+        const moveSceneX = gsap.quickTo(sceneLayer, 'rotateX', { duration: 1.2, ease: 'power3.out' });
+        const moveContent = gsap.quickTo(contentLayer, 'x', { duration: 1, ease: 'power3.out' });
+        const moveContentY = gsap.quickTo(contentLayer, 'y', { duration: 1, ease: 'power3.out' });
+        const moveHud = gsap.quickTo(hudLayer, 'rotationZ', { duration: 1.4, ease: 'power3.out' });
+
+        const handlePointerMove = (event) => {
+            const x = event.clientX / window.innerWidth - 0.5;
+            const y = event.clientY / window.innerHeight - 0.5;
+            moveScene(x * 5);
+            moveSceneX(-y * 4);
+            moveContent(x * -12);
+            moveContentY(y * -8);
+            moveHud(x * 2);
+        };
+
+        const resetDepth = () => {
+            moveScene(0);
+            moveSceneX(0);
+            moveContent(0);
+            moveContentY(0);
+            moveHud(0);
+        };
+
+        window.addEventListener('pointermove', handlePointerMove);
+        window.addEventListener('pointerleave', resetDepth);
+
+        return () => {
+            tl.kill();
+            window.removeEventListener('pointermove', handlePointerMove);
+            window.removeEventListener('pointerleave', resetDepth);
+            gsap.killTweensOf([sceneLayer, contentLayer, hudLayer]);
+        };
     }, []);
 
     const socialLinks = [
@@ -99,7 +135,7 @@ const Hero = () => {
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black grid-bg"
         >
             {/* ── 3D Canvas Background ─────────────────── */}
-            <div className="absolute inset-0 z-0">
+            <div className="hero-scene-layer absolute inset-0 z-0">
                 <Scene3D />
             </div>
 
@@ -112,17 +148,19 @@ const Hero = () => {
             <div className="hero-blob-2 absolute bottom-16 right-12 w-[380px] h-[380px] bg-primary/10 rounded-full blur-[100px] pointer-events-none z-1" />
 
             {/* ── Futuristic HUD layer ──────────────────── */}
-            <div className="hero-orbit hero-orbit-one" />
-            <div className="hero-orbit hero-orbit-two" />
-            <div className="hero-crosshair hero-crosshair-left" />
-            <div className="hero-crosshair hero-crosshair-right" />
+            <div className="hero-hud-layer absolute inset-0 pointer-events-none">
+                <div className="hero-orbit hero-orbit-one" />
+                <div className="hero-orbit hero-orbit-two" />
+                <div className="hero-crosshair hero-crosshair-left" />
+                <div className="hero-crosshair hero-crosshair-right" />
+            </div>
             <div className="hero-status absolute top-28 right-6 md:right-12 lg:right-24 z-10">
                 <span className="hero-status-dot" />
                 SYSTEM ONLINE
             </div>
 
             {/* ── Content ───────────────────────────────── */}
-            <div className="relative z-10 container-custom section-padding text-center w-full">
+            <div className="hero-content-layer relative z-10 container-custom section-padding text-center w-full">
 
                 {/* availability badge */}
                 <div ref={badgeRef} className="flex justify-center mb-6">
